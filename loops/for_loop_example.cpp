@@ -2,10 +2,10 @@
 using namespace std;
 
 int main() {
-    int y = 10;
-    for (int i = 100; i > 0 && y % 3 != 0; i/=2, y--) {
+    for (int i = 15;  ; i--) {
+        if(i == 10)
+            break;
         cout << "Iteration: " << i << endl;
-        cout << "Y: " << y << endl;
 
     }
     return 0;

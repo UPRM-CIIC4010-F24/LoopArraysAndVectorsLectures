@@ -2,7 +2,10 @@
 using namespace std;
 
 int main() {
+    // Counter
     int count = 15;
+    // Acumulator, this value is used to acumulate
+    // values in the loop
     int sum = 0;
     
     while (count > 0 ) {

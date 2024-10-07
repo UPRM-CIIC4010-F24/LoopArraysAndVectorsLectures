@@ -6,9 +6,8 @@ void inputWithWhile() {
     int input;
     cout << "Enter a number between 1 and 10: ";
     cin >> input;
-
+    // Check if the input is valid if not continue asking
     while (input < 1 || input > 10) {
-        cout << "Invalid input! Try again: ";
         cout << "Enter a number between 1 and 10: ";
         cin >> input;
     }
@@ -21,10 +20,7 @@ void inputWithDoWhile() {
     do {
         cout << "Enter a number between 1 and 10: ";
         cin >> input;
-
-        // if (input < 1 || input > 10) {
-        //     cout << "Invalid input! Try again." << endl;
-        // }
+        
     } while (input < 1 || input > 10);
     cout << "You entered: " << input << endl;
 }
