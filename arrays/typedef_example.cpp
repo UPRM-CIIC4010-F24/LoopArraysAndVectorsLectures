@@ -4,11 +4,19 @@ using namespace std;
 // Using typedef to define a new name for an existing type
 typedef unsigned MyInt;
 typedef float MyFloat;
+typedef unsigned long long int MyULLint;
+
 
 // Using typedef to define an array type
 typedef int IntArray[5];
 
 int main() {
+
+    MyULLint w = 0;
+    MyULLint q = 0;
+
+
+
     // Using typedef for types
     MyInt a = 10;
     MyFloat b = 3.14f;

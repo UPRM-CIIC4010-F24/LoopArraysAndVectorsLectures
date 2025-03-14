@@ -41,6 +41,6 @@ void processing_using_parallel_arrays() {
 int main() {
 
     processing_using_parallel_arrays();
-    processing_using_class();
+    // processing_using_class();
     return 0;
 }

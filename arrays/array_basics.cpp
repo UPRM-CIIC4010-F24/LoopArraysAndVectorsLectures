@@ -1,6 +1,9 @@
 #include <iostream>
 using namespace std;
 
+/*
+
+*/
 int main() {
     // 1. Initialize an array
     int arr[5]= {1, 2, 3, 4, 5}; 
@@ -17,7 +20,7 @@ int main() {
     arr[4] = 20;  // Changing the fifth element
     
     // 4. Print modified array
-    cout << "Modified array: ";
+    cout << endl << "Modified array: " ;
     for (int i = 0; i < 5; i++) {
         cout << arr[i] << " ";  // Output: 1 2 10 4 20
     }

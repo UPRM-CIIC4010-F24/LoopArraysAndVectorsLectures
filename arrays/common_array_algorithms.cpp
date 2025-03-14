@@ -27,14 +27,18 @@ Person findMinAge(Person persons[], int size) {
 
 // Function to find the person with the maximum age
 Person findMaxAge(Person persons[], int size) {
-    int maxIndex = 0;
-    for (int i = 1; i < size; i++) {
-        if (persons[i].age > persons[maxIndex].age) {
-            maxIndex = i;
+
+    int currMax = persons[0].age, indMax = 0;
+    for(int i = 1; i < size; i++) {
+        if(persons[i].age > currMax) {
+            currMax = persons[i].age;
+            indMax = i;
         }
     }
-    return persons[maxIndex];
+    return persons[indMax];
+
 }
+
 
 // Function to calculate the average age
 float calculateAverageAge(Person persons[], int size) {
@@ -66,25 +70,25 @@ int main() {
     int size = 4;
 
     // Find min age
-    Person minAgePerson = findMinAge(persons, size);
-    cout << "Person with minimum age: " << minAgePerson.name << " (" << minAgePerson.age << ")" << endl;
+    // Person minAgePerson = findMinAge(persons, size);
+    // cout << "Person with minimum age: " << minAgePerson.name << " (" << minAgePerson.age << ")" << endl;
 
     // Find max age
     Person maxAgePerson = findMaxAge(persons, size);
     cout << "Person with maximum age: " << maxAgePerson.name << " (" << maxAgePerson.age << ")" << endl;
 
     // Calculate average age
-    float averageAge = calculateAverageAge(persons, size);
-    cout << "Average age: " << averageAge << endl;
+    // float averageAge = calculateAverageAge(persons, size);
+    // cout << "Average age: " << averageAge << endl;
 
-    // Find person by name
-    string searchName = "Charlie";
-    Person* foundPerson = findPersonByName(persons, size, searchName);
-    if (foundPerson != nullptr) {
-        cout << "Found person: " << foundPerson->name << " (" << foundPerson->age << ")" << endl;
-    } else {
-        cout << "Person not found!" << endl;
-    }
+    // // Find person by name
+    // string searchName = "Charlie";
+    // Person* foundPerson = findPersonByName(persons, size, searchName);
+    // if (foundPerson != nullptr) {
+    //     cout << "Found person: " << foundPerson->name << " (" << foundPerson->age << ")" << endl;
+    // } else {
+    //     cout << "Person not found!" << endl;
+    // }
 
     return 0;
 }

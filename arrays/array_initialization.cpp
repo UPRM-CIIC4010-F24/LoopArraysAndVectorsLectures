@@ -21,6 +21,7 @@ int main() {
     // Example 3: Initialization with All Elements Set to Zero
     int arr3[5] = {0};  // All elements are initialized to 0
     cout << "Initialization with All Elements Set to Zero\nArray 3: ";
+    arr3[4] = 20;
     for (int i = 0; i < 5; i++) {
         cout << arr3[i] << " "; // Output: 0 0 0 0 0
     }
@@ -28,11 +29,15 @@ int main() {
 
     // Example 4: Implicit Size from Initialization List
     int arr4[] = {10, 20, 30, 40, 50};  // Size automatically determined by the number of elements
-    int sizeOfArr4 = sizeof(arr4) / sizeof(arr4[0]);
+    int sizeOfArr4 = sizeof(arr4) / sizeof(int);
     cout << "Implicit Size from Initialization List\nArray 4: ";
     for (int i = 0; i < sizeOfArr4; i++) {
         cout << arr4[i] << " "; // Output: 10 20 30 40 50
     }
+    int arr[5];
+    // 20 bytes
+    // int 4 byte
+    // sizeof(arr)/sizeof(int) => 20/4 = 5
     cout << endl;
     return 0;
 }

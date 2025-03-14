@@ -13,7 +13,7 @@ int* resizeArray(int* arr, int oldSize, int newSize) {
 
     // If new array is larger, initialize the remaining elements to 0
     for (int i = oldSize; i < newSize; i++) {
-        newArr[i] = 0;
+        newArr[i] = -5;
     }
 
     // Delete the old array (since memory was dynamically allocated)
@@ -25,21 +25,40 @@ int* resizeArray(int* arr, int oldSize, int newSize) {
 
 // Function to shift array elements by one position (left or right)
 void shiftArray(int* arr, int size, bool shiftRight) {
-    if (shiftRight) {
-        // Shift elements to the right
-        int last = arr[size - 1];
-        for (int i = size - 1; i > 0; i--) {
-            arr[i] = arr[i - 1];
-        }
-        arr[0] = last;  // Place the last element in the first position
-    } else {
-        // Shift elements to the left
-        int first = arr[0];
-        for (int i = 0; i < size - 1; i++) {
-            arr[i] = arr[i + 1];
-        }
-        arr[size - 1] = first;  // Place the first element in the last position
+    // 1 2 3 4 5 _   size = 6
+    // _ 1 2 3 4 5
+   if(shiftRight) {
+    int newFirst = arr[size-1];
+    for(int i = size - 1; i >= 0 ; i--) {
+        arr[i] = arr[i-1];
     }
+    arr[0] = newFirst;
+   } else {
+    int newLast = arr[0];
+    for(int i = 0; i < size; i++) {
+        arr[i] = arr[i+1];
+        // arr[i-1] = a[i];
+    }
+    arr[size-1] = newLast;
+   }
+    
+
+
+    // if (shiftRight) {
+    //     // Shift elements to the right
+    //     int last = arr[size - 1];
+    //     for (int i = size - 1; i > 0; i--) {
+    //         arr[i] = arr[i - 1];
+    //     }
+    //     arr[0] = last;  // Place the last element in the first position
+    // } else {
+    //     // Shift elements to the left
+    //     int first = arr[0];
+    //     for (int i = 0; i < size - 1; i++) {
+    //         arr[i] = arr[i + 1];
+    //     }
+    //     arr[size - 1] = first;  // Place the first element in the last position
+    // }
 }
 
 int main() {
@@ -55,9 +74,9 @@ int main() {
     cout << endl;
 
     // Resizing the array
-    int newSize = 7;
+    int newSize = 10;
     arr = resizeArray(arr, oldSize, newSize);
-
+    // 1 2 3 9 4 5 -5 -5 -5 -5  
     // Print the resized array
     cout << "Resized array: ";
     for (int i = 0; i < newSize; i++) {
