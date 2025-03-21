@@ -41,6 +41,7 @@ int main() {
     for (it = people.begin(); it != people.end(); ++it) {
         it->display();  // Use the iterator to call the display function of each Person object
         // Why use ->? it->display() is the same as doing (*it).display()
+        // (*it).display();
     }
 
     // Modify the ages of each person in the vector using the iterator

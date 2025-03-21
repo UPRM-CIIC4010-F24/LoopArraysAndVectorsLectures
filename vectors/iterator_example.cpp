@@ -9,7 +9,7 @@ int main() {
     // Iterate through the vector using the iterator
     cout << "Elements in the vector: ";
     for (auto it = numbers.begin(); it != numbers.end(); ++it) {
-        cout << *it<< " ";  // Dereference the iterator to access the value
+        cout << *it << " ";  // Dereference the iterator to access the value
     }
     cout << endl;
 
@@ -18,7 +18,7 @@ int main() {
         *it += 5;  // Increment each element by 5
     }
 
-    // Output the modified vector
+    // // Output the modified vector
     cout << "Modified elements in the vector: ";
     for (auto it = numbers.begin(); it != numbers.end(); ++it) {
         cout << *it << " ";
