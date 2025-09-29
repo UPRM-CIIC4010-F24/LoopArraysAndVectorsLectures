@@ -25,6 +25,7 @@ bool break_cont_loop(int g) {
 }
 int main() {
     cout << boolalpha;
-    cout << break_cont_loop(20) << endl;
+    // break_cont_loop();
+    cout << break_cont_loop(50) << endl;
     return 0;
 }

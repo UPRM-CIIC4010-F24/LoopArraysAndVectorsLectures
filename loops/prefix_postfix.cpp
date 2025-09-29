@@ -31,13 +31,18 @@ void postfix_exmaple() {
 
 }
 int main() {
-    int arr[] = {2, 4, 6, 8, -1};  // -1 is the sentinel value
-    int i = 0;
+    // int arr[] = {2, 4, 6, 8, -1};  // -1 is the sentinel value
+    // int i = 0;
 
-    while (arr[i] != -1) {
-        cout << "Array element: " << arr[i] << endl;
-        i++;
-    }
+    // while (arr[i] != -1) {
+    //     cout << "Array element: " << arr[i] << endl;
+    //     i++;
+    // }
+
+    int num1 = 5;
+    int num2 = 29;
+
+    cout << (num1++ + --num2) << endl;
 
     return 0;
 }

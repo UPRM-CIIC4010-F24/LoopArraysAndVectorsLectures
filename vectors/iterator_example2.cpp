@@ -14,7 +14,7 @@ public:
     // Function to display person details
     void display() const {
         cout << "Name: " << name << ", Age: " << age << endl;
-    }
+    }   
 };
 int averageAge(vector<Person> people) {
     int sum = 0;

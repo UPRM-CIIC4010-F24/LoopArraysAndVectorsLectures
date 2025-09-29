@@ -43,10 +43,10 @@ Person findMaxAge(Person persons[], int size) {
 // Function to calculate the average age
 float calculateAverageAge(Person persons[], int size) {
     int sum = 0;
-    for (int i = 0; i < size; i++) {
+    for(int i = 0; i < size; i++) {
         sum += persons[i].age;
     }
-    return static_cast<float>(sum) / size;
+    return 1.0* sum / size;
 }
 
 // Function to find a person by name
@@ -74,12 +74,12 @@ int main() {
     // cout << "Person with minimum age: " << minAgePerson.name << " (" << minAgePerson.age << ")" << endl;
 
     // Find max age
-    Person maxAgePerson = findMaxAge(persons, size);
-    cout << "Person with maximum age: " << maxAgePerson.name << " (" << maxAgePerson.age << ")" << endl;
+    // Person maxAgePerson = findMaxAge(persons, size);
+    // cout << "Person with maximum age: " << maxAgePerson.name << " (" << maxAgePerson.age << ")" << endl;
 
     // Calculate average age
-    // float averageAge = calculateAverageAge(persons, size);
-    // cout << "Average age: " << averageAge << endl;
+    float averageAge = calculateAverageAge(persons, size);
+    cout << "Average age: " << averageAge << endl;
 
     // // Find person by name
     // string searchName = "Charlie";
@@ -92,3 +92,9 @@ int main() {
 
     return 0;
 }
+
+// int sum = 0;
+//     for (int i = 0; i < size; i++) {
+//         sum += persons[i].age;
+//     }
+//     return static_cast<float>(sum) / size;

@@ -21,7 +21,7 @@ int main() {
     // Example 3: Initialization with All Elements Set to Zero
     int arr3[5] = {0};  // All elements are initialized to 0
     cout << "Initialization with All Elements Set to Zero\nArray 3: ";
-    arr3[4] = 20;
+    arr3[3] = 20;
     for (int i = 0; i < 5; i++) {
         cout << arr3[i] << " "; // Output: 0 0 0 0 0
     }

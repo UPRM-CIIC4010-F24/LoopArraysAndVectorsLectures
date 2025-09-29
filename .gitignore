@@ -16,3 +16,5 @@
 
 # Ignore VSCode configuration folder
 .vscode
+
+tempCodeRunnerFile.cpp

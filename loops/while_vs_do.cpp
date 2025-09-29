@@ -4,14 +4,16 @@ using namespace std;
 // Function with while loop
 void inputWithWhile() {
     int input;
-    cout << "Enter a number between 1 and 10: ";
+    cout << "Enter a number between 1 and 10: " << endl;
     cin >> input;
     // Check if the input is valid if not continue asking
     while (input < 1 || input > 10) {
-        cout << "Enter a number between 1 and 10: ";
+        cout << "Invalid value. Try again." << endl;
+        cout << "Enter a number between 1 and 10: " << endl;
         cin >> input;
     }
     cout << "You entered: " << input << endl;
+
 }
 
 // Function with do-while loop

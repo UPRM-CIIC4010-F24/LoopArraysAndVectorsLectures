@@ -37,6 +37,25 @@ int main() {
 
    // Accessing rows
    // The total number of rows is given by the size of the matrix.
+    for(int row = 0; row < 3; row++) {
+        for(int col = 0; col < 3; col++) {
+            if(matrix[row][col] == target) {
+                found = true;
+                break;
+            }
+        }
+        if(found) break;
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     for (int row = 0; row < matrix.size(); row++) {
         // Iterating through the columns
         // The total number of columns is given by the size of the row.
