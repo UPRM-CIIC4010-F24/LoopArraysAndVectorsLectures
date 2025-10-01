@@ -133,18 +133,27 @@ Archer::Archer() {
     - Number of creatures encountered by the archer: 0
 */
 Archer::Archer(int health, int att, float acc) {
-
+    this->health = health;
+    this->attackPower = att;
+    this->accuracy = acc;
+    this->hasShortBow =true;
+    this->arrows = 10;
+    this->creaturesCaught = 0;
+    this->creaturesEncountered = 0;
 }
 
 /*
- * Returns an archer with the following atributes:
+ * Returns an archer with the following attributes:
  * - Has 60% of the health the the original
  * - Half the attack power
+ * - Has 40% the accuracy
  * - Has the opposite of the short bow status of the archer (this)
  * - Has half the arrows 
 */
 Archer Archer::spawnAssistant() {
-
+    // (int health, int attackPower, double accuracy, bool hasShortBow, int arrows)
+    return Archer(this->health * 0.6, this->attackPower/2, this->accuracy*0.4, !this->hasShortBow, this->arrows/2);
+    // return assistant;
 }
 
 /******************************************************************
@@ -215,6 +224,16 @@ void Archer::increaseAttackPower(double percentage, int maxPower) {
 /*********
  * Test cases
  *********/
+void testSpawn() {
+    Archer OGArcher = Archer();
+    cout << "OG ARcher:" << endl;
+    OGArcher.display();
+    Archer asistant = OGArcher.spawnAssistant();
+    cout << "Assistant archer:" << endl;
+    asistant.display();
+}
+
+
 void testDefaultConstructor() {
     // Test 1
     Archer archer;
@@ -291,14 +310,15 @@ void testIncreaseAttackPower() {
 int main() {
     string divisor;
     divisor.append(50, '*');
-    cout << divisor << endl;
-    testDefaultConstructor();
-    cout << divisor << endl;
-    testConstructor();
-    cout << divisor << endl;
-    testCatchCreature2();
-    cout << divisor << endl;
-    testIncreaseAttackPower();
-    cout << divisor << endl;
+    testSpawn();
+    // cout << divisor << endl;
+    // testDefaultConstructor();
+    // cout << divisor << endl;
+    // testConstructor();
+    // cout << divisor << endl;
+    // testCatchCreature2();
+    // cout << divisor << endl;
+    // testIncreaseAttackPower();
+    // cout << divisor << endl;
     return 0;
 }

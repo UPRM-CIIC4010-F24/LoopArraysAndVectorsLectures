@@ -16,13 +16,13 @@ public:
 
 // Function to find the person with the minimum age
 Person findMinAge(Person persons[], int size) {
-    int minIndex = 0;
-    for (int i = 1; i < size; i++) {
-        if (persons[i].age < persons[minIndex].age) {
-            minIndex = i;
+    Person minPerson = persons[0];
+    for(int i=1; i < size; i++) {
+        if(persons[i].age < minPerson.age) {
+            minPerson = persons[i];
         }
     }
-    return persons[minIndex];
+    return minPerson;
 }
 
 // Function to find the person with the maximum age
@@ -70,16 +70,16 @@ int main() {
     int size = 4;
 
     // Find min age
-    // Person minAgePerson = findMinAge(persons, size);
-    // cout << "Person with minimum age: " << minAgePerson.name << " (" << minAgePerson.age << ")" << endl;
+    Person minAgePerson = findMinAge(persons, size);
+    cout << "Person with minimum age: " << minAgePerson.name << " (" << minAgePerson.age << ")" << endl;
 
     // Find max age
     // Person maxAgePerson = findMaxAge(persons, size);
     // cout << "Person with maximum age: " << maxAgePerson.name << " (" << maxAgePerson.age << ")" << endl;
 
     // Calculate average age
-    float averageAge = calculateAverageAge(persons, size);
-    cout << "Average age: " << averageAge << endl;
+    // float averageAge = calculateAverageAge(persons, size);
+    // cout << "Average age: " << averageAge << endl;
 
     // // Find person by name
     // string searchName = "Charlie";

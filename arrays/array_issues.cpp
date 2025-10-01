@@ -13,7 +13,7 @@ int* resizeArray(int* arr, int oldSize, int newSize) {
 
     // If new array is larger, initialize the remaining elements to 0
     for (int i = oldSize; i < newSize; i++) {
-        newArr[i] = -5;
+        newArr[i] = 0;
     }
 
     // Delete the old array (since memory was dynamically allocated)
@@ -22,14 +22,33 @@ int* resizeArray(int* arr, int oldSize, int newSize) {
     // Return the new array
     return newArr;
 }
-
+void shiftArray(int* arr, int size, int pos, bool shiftRight) {
+    // 1 2 3 4 5 _   size = 6
+    // _ 1 2 3 4 5
+   if(shiftRight) {
+    // int newFirst = arr[size-1];
+    for(int i = size - 1; i > pos ; i--) {
+        arr[i] = arr[i-1];
+    }
+    arr[pos] = -10;
+    // arr[0] = newFirst;
+   } else {
+    // int newLast = arr[0];
+    for(int i = pos; i < size; i++) {
+        arr[i] = arr[i+1];
+        // arr[i-1] = a[i];
+    }
+    arr[size-2] = 12;
+    // arr[size-1] = newLast;
+   }
+}
 // Function to shift array elements by one position (left or right)
 void shiftArray(int* arr, int size, bool shiftRight) {
     // 1 2 3 4 5 _   size = 6
     // _ 1 2 3 4 5
    if(shiftRight) {
     int newFirst = arr[size-1];
-    for(int i = size - 1; i >= 0 ; i--) {
+    for(int i = size - 1; i > 0 ; i--) {
         arr[i] = arr[i-1];
     }
     arr[0] = newFirst;
@@ -75,8 +94,8 @@ int main() {
 
     // Resizing the array
     int newSize = 10;
-    arr = resizeArray(arr, oldSize, newSize);
-    // 1 2 3 9 4 5 -5 -5 -5 -5  
+    // arr = resizeArray(arr, oldSize, newSize);
+    // 1 2 3 9 4 5 0 0 0 0
     // Print the resized array
     cout << "Resized array: ";
     for (int i = 0; i < newSize; i++) {
@@ -85,24 +104,27 @@ int main() {
     cout << endl;
 
     // Shift array to the right
-    shiftArray(arr, newSize, true);
+    shiftArray(arr, oldSize, 2, false);
 
     // Print array after right shift
     cout << "Array after right shift: ";
-    for (int i = 0; i < newSize; i++) {
+    for (int i = 0; i < oldSize; i++) {
         cout << arr[i] << " ";
     }
     cout << endl;
 
     // Shift array to the left
-    shiftArray(arr, newSize, false);
+    // shiftArray(arr, oldSize, false);
 
-    // Print array after left shift
-    cout << "Array after left shift: ";
-    for (int i = 0; i < newSize; i++) {
-        cout << arr[i] << " ";
-    }
+    // // Print array after left shift
+    // cout << "Array after left shift: ";
+    // for (int i = 0; i < oldSize; i++) {
+    //     cout << arr[i] << " ";
+    // }
     cout << endl;
+
+
+
 
     // Free the dynamically allocated memory
     delete[] arr;

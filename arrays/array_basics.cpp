@@ -1,6 +1,11 @@
 #include <iostream>
 using namespace std;
 
+
+void doubleIt(int arr[], int size) {
+    for(int i =0; i < size; i++)
+        arr[i] *=2;
+}
 /*
 
 */
@@ -30,5 +35,8 @@ int main() {
     int sizeOfArray = sizeof(arr) / sizeof(arr[0]);
     cout << "The size of the array is: " << sizeOfArray << endl;  // Output: 5
 
+    doubleIt(arr, 5);
+    for(int i: arr)
+        cout << i << " ";
     return 0;
 }
